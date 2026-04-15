@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 
-export interface AuthRequest extends Request {
+export interface AuthRequest extends Request<any, any, any, any> {
   user?: {
     uid: string;
     email?: string;
