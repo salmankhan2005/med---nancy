@@ -40,16 +40,10 @@ const autoRegister = async (firebaseUser: any): Promise<{ user: User; isNew: boo
   } catch (error: any) {
     if (error.message?.includes("User not found") || error.message?.includes("404") || error.message?.includes("not found")) {
       // New user — register them
-      const token = await firebaseUser.getIdToken();
-      const name = firebaseUser.displayName 
-        || firebaseUser.email?.split("@")[0]?.replace(/[^a-zA-Z]/g, " ").replace(/\b\w/g, (l: string) => l.toUpperCase()) 
-        || "User";
-      const res = await fetch(import.meta.env.VITE_API_BASE_URL + "/api/auth/register", {
+      const newProfile = await fetchApi("/api/auth/register", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify({ name, role: "patient" })
       });
-      const newProfile = await res.json();
       return { user: newProfile, isNew: true };
     }
     throw error;
@@ -74,10 +68,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   register: async (email: string, pass: string, name: string) => {
     const cred = await createUserWithEmailAndPassword(auth, email, pass);
-    const token = await cred.user.getIdToken();
-    await fetch(import.meta.env.VITE_API_BASE_URL + "/api/auth/register", {
+    await fetchApi("/api/auth/register", {
       method: "POST",
-      headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
       body: JSON.stringify({ name, role: "patient" })
     });
     // onAuthStateChanged handles redirect; mark as new user for onboarding

@@ -2,7 +2,7 @@ import { auth } from "./firebase";
 
 export const fetchApi = async (endpoint: string, options: RequestInit = {}) => {
   const isProd = import.meta.env.PROD;
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || (isProd ? "" : "http://localhost:3001");
+  const baseUrl = isProd ? "" : (import.meta.env.VITE_API_BASE_URL || "http://localhost:3001");
   const currentUser = auth.currentUser;
   
   const headers = new Headers(options.headers || {});
