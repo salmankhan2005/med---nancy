@@ -1,10 +1,14 @@
 import { Request, Response, NextFunction } from "express";
 
-export interface AuthRequest extends Request<any, any, any, any> {
+export interface AuthRequest extends Request {
   user?: {
     uid: string;
     email?: string;
   };
+  // Explicitly defined to satisfy strict compilers
+  body: any;
+  query: any;
+  params: any;
 }
 
 // Verifies a Firebase ID token using the REST API (no service account needed)
