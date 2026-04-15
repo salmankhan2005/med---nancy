@@ -1,8 +1,8 @@
 import express from "express";
-import { db } from "../db";
-import { users, patients, reports, appointments, notifications, healthMetrics } from "../db/schema";
+import { db } from "../db/index.js";
+import { users, patients, reports, appointments, notifications, healthMetrics } from "../db/schema.js";
 import { eq } from "drizzle-orm";
-import { requireAuth, AuthRequest } from "../middleware/auth";
+import { requireAuth, AuthRequest } from "../middleware/auth.js";
 
 const router = express.Router();
 

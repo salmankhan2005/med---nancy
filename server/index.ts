@@ -17,12 +17,12 @@ app.use((req, res, next) => {
 });
 
 // Routes will be imported here
-import authRoutes from "./routes/auth";
-import reportsRoutes from "./routes/reports";
-import patientsRoutes from "./routes/patients";
-import appointmentsRoutes from "./routes/appointments";
-import adminRoutes from "./routes/admin";
-import seedRoutes from "./routes/seed";
+import authRoutes from "./routes/auth.js";
+import reportsRoutes from "./routes/reports.js";
+import patientsRoutes from "./routes/patients.js";
+import appointmentsRoutes from "./routes/appointments.js";
+import adminRoutes from "./routes/admin.js";
+import seedRoutes from "./routes/seed.js";
 
 app.use("/api/auth", authRoutes);
 app.use("/api/reports", reportsRoutes);

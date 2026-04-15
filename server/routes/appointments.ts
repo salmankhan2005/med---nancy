@@ -1,8 +1,8 @@
 import express from "express";
-import { db } from "../db";
-import { appointments, users, patients } from "../db/schema";
+import { db } from "../db/index.js";
+import { appointments, users, patients } from "../db/schema.js";
 import { eq, desc } from "drizzle-orm";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth } from "../middleware/auth.js";
 import { alias } from "drizzle-orm/pg-core";
 
 const router = express.Router();
