@@ -29,7 +29,6 @@ const navByRole: Record<UserRole, NavItem[]> = {
     { title: "My Reports", url: "/dashboard/patient/reports", icon: FileText },
     { title: "Health Analytics", url: "/dashboard/patient/analytics", icon: BarChart3 },
     { title: "Appointments", url: "/dashboard/patient/appointments", icon: Calendar },
-    { title: "Health Goals", url: "/dashboard/patient/goals", icon: Heart },
     { title: "Notifications", url: "/dashboard/patient/notifications", icon: Bell },
     { title: "Settings", url: "/dashboard/patient/settings", icon: Settings },
   ],
@@ -39,7 +38,6 @@ const navByRole: Record<UserRole, NavItem[]> = {
     { title: "Report Management", url: "/dashboard/lab/reports", icon: FileText },
     { title: "Patient Directory", url: "/dashboard/lab/patients", icon: Users },
     { title: "Lab Performance", url: "/dashboard/lab/performance", icon: BarChart3 },
-    { title: "Notifications", url: "/dashboard/lab/notifications", icon: Bell },
   ],
   doctor: [
     { title: "Dashboard", url: "/dashboard/doctor", icon: LayoutDashboard },
@@ -47,7 +45,6 @@ const navByRole: Record<UserRole, NavItem[]> = {
     { title: "Report Review", url: "/dashboard/doctor/reports", icon: ClipboardList },
     { title: "Medical Insights", url: "/dashboard/doctor/insights", icon: Stethoscope },
     { title: "Schedule", url: "/dashboard/doctor/schedule", icon: Calendar },
-    { title: "Notifications", url: "/dashboard/doctor/notifications", icon: Bell },
   ],
   admin: [
     { title: "Dashboard", url: "/dashboard/admin", icon: LayoutDashboard },

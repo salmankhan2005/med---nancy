@@ -13,7 +13,6 @@ import PatientDashboard from "./pages/dashboard/PatientDashboard";
 import PatientReports from "./pages/dashboard/PatientReports";
 import PatientAnalytics from "./pages/dashboard/PatientAnalytics";
 import AppointmentsPage from "./pages/dashboard/AppointmentsPage";
-import HealthGoalsPage from "./pages/dashboard/HealthGoalsPage";
 import NotificationsPage from "./pages/dashboard/NotificationsPage";
 import SettingsPage from "./pages/dashboard/SettingsPage";
 import LabDashboard from "./pages/dashboard/LabDashboard";
@@ -54,7 +53,6 @@ const App = () => (
               <Route path="patient/reports" element={<PatientReports />} />
               <Route path="patient/analytics" element={<PatientAnalytics />} />
               <Route path="patient/appointments" element={<AppointmentsPage />} />
-              <Route path="patient/goals" element={<HealthGoalsPage />} />
               <Route path="patient/notifications" element={<NotificationsPage />} />
               <Route path="patient/settings" element={<SettingsPage />} />
 
@@ -64,7 +62,6 @@ const App = () => (
               <Route path="lab/reports" element={<PatientReports />} />
               <Route path="lab/patients" element={<PatientsPage />} />
               <Route path="lab/performance" element={<LabPerformancePage />} />
-              <Route path="lab/notifications" element={<NotificationsPage />} />
 
               {/* Doctor */}
               <Route path="doctor" element={<DoctorDashboard />} />
@@ -72,7 +69,6 @@ const App = () => (
               <Route path="doctor/reports" element={<DoctorReportReview />} />
               <Route path="doctor/insights" element={<DoctorInsightsPage />} />
               <Route path="doctor/schedule" element={<DoctorSchedulePage />} />
-              <Route path="doctor/notifications" element={<NotificationsPage />} />
 
               {/* Admin */}
               <Route path="admin" element={<AdminDashboard />} />
